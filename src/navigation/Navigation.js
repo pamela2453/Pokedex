@@ -12,6 +12,7 @@ export default function Navigation() {
     return (
         <Tab.Navigator
             style={styles.tabBar}
+            initialRouteName="Pokedex"
         >
             <Tab.Screen
                 name="Favorites"
