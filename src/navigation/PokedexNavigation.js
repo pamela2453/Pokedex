@@ -7,7 +7,7 @@ const Stack = createStackNavigator();
 
 export default function PokedexNavigation() {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator >
             <Stack.Screen
                 name="Pokedex"
                 component={PokedexScreen}

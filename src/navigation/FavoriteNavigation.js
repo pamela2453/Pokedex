@@ -9,9 +9,9 @@ export default function FavoriteNavigation() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Favorite"
+        name="Favorites"
         component={Favorites}
-        options={{ title: "Favoritos" }}
+        options={{ title: "" }}
       />
       <Stack.Screen
         name="Pokemon"

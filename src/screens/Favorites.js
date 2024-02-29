@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
 import { getPokemonsFavoriteApi } from "../api/favorite";
 import { getPokemonDetailsApi } from "../api/pokemon";
@@ -30,7 +30,6 @@ export default function Favorites() {
               image: pokemonDetails.sprites.other["official-artwork"].front_default,
             });
           }
-
           setPokemons(pokemonsArray);
         })();
       }
@@ -40,17 +39,18 @@ export default function Favorites() {
   return !auth ? (
     <NoLogged />
   ) : (
-    <>{pokemons.length === 0 ? <Image style={styles.img} source={image} /> : <PokemonList pokemons={pokemons} />}</>
+    <>{pokemons.length === 0 ? <View style={styles.container}><Image style={styles.image} source={image} /></View> : <PokemonList pokemons={pokemons} />}</>
   );
 }
 
 const styles = StyleSheet.create({
-  img: {
-    display: 1,
-    justifyContext: "center",
-    alignSelf: "center",
-    width: 200,
-    height: 200,
-    top: -20
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: 'center',
   },
-});
+  image: {
+    width: 260,
+    height: 260,
+  }
+})

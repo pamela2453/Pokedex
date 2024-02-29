@@ -18,7 +18,7 @@ export default function Navigation() {
                 name="Favorites"
                 component={FavoriteNavigation}
                 options={{
-                    tabBarLabel: "Favoritos",
+                    // tabBarLabel: "Favoritos",
                     headerTitleAlign: "center",
                     tabBarIcon: ({ color, size }) => (
                         <Icon name="heart" color={color} size={size} />
